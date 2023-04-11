@@ -12,22 +12,22 @@ const navItems = [
   {
     title: "Organize Meetup",
     to: "/meetup/new",
-    icon: "ic:sharp-location-on",
+    icon: "mdi-map-marker",
   },
   {
     title: "Profile",
     to: "/profile",
-    icon: "mdi:user",
+    icon: "mdi-account",
   },
   {
     title: "Sign up",
     to: "/signup",
-    icon: "mdi:face-man-profile",
+    icon: "mdi-face-man",
   },
   {
     title: "Sign in",
     to: "/signin",
-    icon: "ic:baseline-lock-open",
+    icon: "mdi-lock-open",
   },
 ];
 </script>
@@ -49,7 +49,7 @@ const navItems = [
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-xs">
       <v-btn v-for="item in navItems" :key="item.title">
-        <v-icon :icon="item.icon" start />
+        <v-icon size="28" :icon="item.icon" start />
         {{ item.title }}
       </v-btn>
     </v-toolbar-items>
