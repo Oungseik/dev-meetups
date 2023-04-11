@@ -1,11 +1,12 @@
 <script setup>
-import HeaderLayout from './components/layouts/HeaderLayout.vue';
-
+import HeaderLayout from "./components/layouts/HeaderLayout.vue";
 </script>
 
 <template>
-  <HeaderLayout />
-  <iconify-icon icon="mdi:home"></iconify-icon>
+  <v-app>
+    <HeaderLayout />
 
-  <RouterView />
+    <main></main>
+    <RouterView />
+  </v-app>
 </template>
