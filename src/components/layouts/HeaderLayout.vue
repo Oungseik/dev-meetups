@@ -36,14 +36,12 @@ const navItems = [
 <template>
   <v-navigation-drawer v-model="drawer" temporary class="header">
     <v-list>
-      <RouterLink v-for="item in navItems" :key="item.title" :to="item.to">
-        <v-list-item :value="item.title">
-          <template v-slot:prepend>
-            <v-icon :icon="item.icon"></v-icon>
-          </template>
-          <v-list-item-title v-text="item.title"></v-list-item-title>
-        </v-list-item>
-      </RouterLink>
+      <v-list-item v-for="item in navItems" :key="item.title" :value="item.title" :to="item.to">
+        <template v-slot:prepend>
+          <v-icon :icon="item.icon"></v-icon>
+        </template>
+        <v-list-item-title v-text="item.title"></v-list-item-title>
+      </v-list-item>
     </v-list>
   </v-navigation-drawer>
   <v-toolbar elevation="4" theme="dark" class="header">
@@ -51,11 +49,9 @@ const navItems = [
     <v-toolbar-title><RouterLink to="/">DevMeetup</RouterLink></v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-xs">
-      <v-btn v-for="item in navItems" :key="item.title">
-        <RouterLink :to="item.to">
-          <v-icon size="28" :icon="item.icon" start />
-          {{ item.title }}
-        </RouterLink>
+      <v-btn v-for="item in navItems" :key="item.title" :to="item.to">
+        <v-icon size="28" :icon="item.icon" start />
+        {{ item.title }}
       </v-btn>
     </v-toolbar-items>
   </v-toolbar>
