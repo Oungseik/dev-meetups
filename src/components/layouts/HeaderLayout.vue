@@ -44,7 +44,7 @@ const navItems = [
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
-  <v-toolbar elevation="4" theme="dark" class="header">
+  <v-toolbar elevation="4" class="header bg-primary">
     <v-app-bar-nav-icon class="hidden-sm-and-up" @click.stop="drawer = !drawer" />
     <v-toolbar-title><RouterLink to="/">DevMeetup</RouterLink></v-toolbar-title>
     <v-spacer></v-spacer>
