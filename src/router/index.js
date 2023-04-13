@@ -34,6 +34,11 @@ const router = createRouter({
       name: "signin",
       component: () => import("../views/SignInView.vue"),
     },
+    {
+      path: "/meetups/:id",
+      name: "Meetup",
+      component: () => import("../views/MeetupView.vue"),
+    },
   ],
 });
 

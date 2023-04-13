@@ -1,21 +1,28 @@
 <script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 const meetups = [
   {
     imageUrl: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
-    id: crypto.randomUUID(),
+    id: "796a5970-8a1c-4cc2-8f53-4f36ec74f5af",
     title: "Meetup in New York",
   },
   {
     imageUrl: "https://cdn.vuetifyjs.com/images/cards/hotel.jpg",
-    id: crypto.randomUUID(),
+    id: "96d43f6d-ade7-4f9f-9b5d-f9b00b407f5c",
     title: "Meetup in Paris",
   },
   {
     imageUrl: "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
-    id: crypto.randomUUID(),
+    id: "ed442b0b-0951-450f-934e-085cf44ef25d",
     title: "Meetup in Moroco",
   },
 ];
+
+function onLoadMeetup(id) {
+  router.push(`/meetups/${id}`);
+}
 </script>
 
 <template>
@@ -30,7 +37,14 @@ const meetups = [
     </v-row>
     <v-row class="mb-2">
       <v-carousel>
-        <v-carousel-item v-for="meetup in meetups" :key="meetup.id" :src="meetup.imageUrl" cover>
+        <v-carousel-item
+          class="cursor-pointer"
+          v-for="meetup in meetups"
+          :key="meetup.id"
+          :src="meetup.imageUrl"
+          cover
+          @click="() => onLoadMeetup(meetup.id)"
+        >
           <div class="title">{{ meetup.title }}</div>
         </v-carousel-item>
       </v-carousel>
@@ -57,5 +71,9 @@ const meetups = [
 <style>
 .v-btn--active .mdi-circle::before {
   color: #fff;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 </style>
