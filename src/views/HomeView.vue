@@ -1,24 +1,10 @@
 <script setup>
 import { useRouter } from "vue-router";
+import { useMeetupStore } from "../stores/meetup";
 
 const router = useRouter();
-const meetups = [
-  {
-    imageUrl: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
-    id: "796a5970-8a1c-4cc2-8f53-4f36ec74f5af",
-    title: "Meetup in New York",
-  },
-  {
-    imageUrl: "https://cdn.vuetifyjs.com/images/cards/hotel.jpg",
-    id: "96d43f6d-ade7-4f9f-9b5d-f9b00b407f5c",
-    title: "Meetup in Paris",
-  },
-  {
-    imageUrl: "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
-    id: "ed442b0b-0951-450f-934e-085cf44ef25d",
-    title: "Meetup in Moroco",
-  },
-];
+const store = useMeetupStore();
+const meetups = store.loadedMeetups;
 
 function onLoadMeetup(id) {
   router.push(`/meetups/${id}`);
