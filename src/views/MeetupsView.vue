@@ -7,7 +7,7 @@ const dateOptions = { year: "numeric", month: "long", day: "numeric" };
 </script>
 
 <template>
-  <v-container>
+  <v-container class="mt-8">
     <v-row
       justify="center"
       v-for="meetup in meetups"

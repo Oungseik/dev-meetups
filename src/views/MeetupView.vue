@@ -1,17 +1,23 @@
-<script setup></script>
+<script setup>
+import { useMeetupStore } from "../stores/meetup";
+import { useRoute } from "vue-router";
+
+const store = useMeetupStore();
+const id = useRoute().params.id;
+const meetup = store.getLoadedMeetup(id);
+const dateOptions = { year: "numeric", month: "long", day: "numeric" };
+</script>
 <template>
   <v-container class="mt-12">
     <v-row justify="center">
       <v-col cols="12" md="8">
         <v-card elevation="8">
-          <v-card-title tag="h3" class="text-primary my-4">My Meetup</v-card-title>
-          <v-img
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-            aspect-ratio="2.5"
-            cover
-          ></v-img>
+          <v-card-title tag="h3" class="text-primary my-4">{{ meetup.title }}</v-card-title>
+          <v-img :src="meetup.imageUrl" aspect-ratio="2.5" cover></v-img>
           <v-card-text class="mt-4">
-            <h3 class="text-info">14th April 2023 - Where it take place</h3>
+            <h3 class="text-info mb-2">
+              {{ new Date(meetup.date).toLocaleString("en-US", dateOptions) }}- Where it take place
+            </h3>
             <div>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam minus fugiat quos
               quam quia ipsa nobis aliquam suscipit quasi aspernatur nam vel dolorem distinctio, et
