@@ -1,20 +1,33 @@
+<script setup>
+import { useMeetupStore } from "../stores/meetup";
+
+const store = useMeetupStore();
+const meetups = store.loadedMeetups;
+const dateOptions = { year: "numeric", month: "long", day: "numeric" };
+</script>
+
 <template>
   <v-container>
-    <v-row justify="center">
+    <v-row
+      justify="center"
+      v-for="meetup in meetups"
+      :key="meetup.id"
+      :set="(date = new Date(meetup.date))"
+    >
       <v-col cols="12" md="8">
         <v-card class="bg-info">
           <v-container fluid>
             <v-row>
               <v-col cols="12" sm="5" md="4">
-                <v-img src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"></v-img>
+                <v-img :src="meetup.imageUrl"></v-img>
               </v-col>
               <v-col>
                 <v-card-title>
-                  <h2>My Meetup</h2>
-                  <div>14th April 2023</div>
+                  <h2>{{ meetup.title }}</h2>
+                  <div>{{ date.toLocaleDateString("en-US", dateOptions) }}</div>
                 </v-card-title>
                 <v-card-actions>
-                  <v-btn class="bg-white" to="/meetups/1">
+                  <v-btn class="bg-white" :to="`/meetups/${meetup.id}`">
                     <v-icon icon="mdi-arrow-right" />
                     View Meetup</v-btn
                   >

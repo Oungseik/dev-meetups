@@ -4,7 +4,7 @@ import { useMeetupStore } from "../stores/meetup";
 
 const router = useRouter();
 const store = useMeetupStore();
-const meetups = store.loadedMeetups;
+const meetups = store.featuredMeetups;
 
 function onLoadMeetup(id) {
   router.push(`/meetups/${id}`);

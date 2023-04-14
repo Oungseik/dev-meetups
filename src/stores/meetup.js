@@ -28,8 +28,9 @@ export const useMeetupStore = defineStore("meetup", () => {
     registeredMeetups: ["meetup-1"],
   });
 
-  const getLoadedMeetups = computed(() => loadedMeetups.sort((a, b) => a.date > b.date));
+  const getLoadedMeetups = computed(() => loadedMeetups.value.sort((a, b) => a.date > b.date));
   const getLoadedMeetup = (id) => computed(() => loadedMeetups.find((meetup) => meetup.id === id));
+  const featuredMeetups = computed(() => loadedMeetups.value.slice(0, 5));
 
-  return { loadedMeetups, user, getLoadedMeetups, getLoadedMeetup };
+  return { loadedMeetups, user, getLoadedMeetups, featuredMeetups, getLoadedMeetup };
 });
