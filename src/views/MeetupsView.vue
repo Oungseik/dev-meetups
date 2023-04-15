@@ -2,18 +2,14 @@
 import { useMeetupStore } from "../stores/meetup";
 
 const store = useMeetupStore();
-const meetups = store.loadedMeetups;
+const meetups = store.getLoadedMeetups;
+console.log(meetups);
 const dateOptions = { year: "numeric", month: "long", day: "numeric" };
 </script>
 
 <template>
   <v-container class="mt-8">
-    <v-row
-      justify="center"
-      v-for="meetup in meetups"
-      :key="meetup.id"
-      :set="(date = new Date(meetup.date))"
-    >
+    <v-row justify="center" v-for="meetup in meetups" :key="meetup.id">
       <v-col cols="12" md="8">
         <v-card class="bg-info">
           <v-container fluid>
@@ -24,7 +20,7 @@ const dateOptions = { year: "numeric", month: "long", day: "numeric" };
               <v-col>
                 <v-card-title>
                   <h2>{{ meetup.title }}</h2>
-                  <div>{{ date.toLocaleDateString("en-US", dateOptions) }}</div>
+                  <div>{{ new Date(meetup.date).toLocaleDateString("en-US", dateOptions) }}</div>
                 </v-card-title>
                 <v-card-actions>
                   <v-btn class="bg-white" :to="`/meetups/${meetup.id}`">

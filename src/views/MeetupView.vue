@@ -7,6 +7,7 @@ const id = useRoute().params.id;
 const meetup = store.getLoadedMeetup(id);
 const dateOptions = { year: "numeric", month: "long", day: "numeric" };
 </script>
+
 <template>
   <v-container class="mt-12">
     <v-row justify="center">
