@@ -6,9 +6,17 @@ export const useCreateMeetupStore = defineStore("createMeetup", () => {
   const location = ref();
   const imageUrl = ref();
   const description = ref();
+  const date = ref();
+  const time = ref();
   const formIsValid = computed(
-    () => title.value && location.value && imageUrl.value && description.value
+    () =>
+      title.value &&
+      location.value &&
+      imageUrl.value &&
+      description.value &&
+      date.value &&
+      time.value
   );
 
-  return { title, location, imageUrl, description, formIsValid };
+  return { title, location, imageUrl, description, date, time, formIsValid };
 });

@@ -3,7 +3,6 @@ import { useMeetupStore } from "../stores/meetup";
 
 const store = useMeetupStore();
 const meetups = store.getLoadedMeetups;
-console.log(meetups);
 const dateOptions = { year: "numeric", month: "long", day: "numeric" };
 </script>
 
