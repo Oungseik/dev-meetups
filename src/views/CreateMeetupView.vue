@@ -1,7 +1,8 @@
 <script setup>
 import { useCreateMeetupStore } from "../stores/createMeetup";
 import { useMeetupStore } from "../stores/meetup";
-import TimePicker from "../components/TimePicker.vue";
+import VueDatePicker from "@vuepic/vue-datepicker";
+import "@vuepic/vue-datepicker/dist/main.css";
 
 const required = (value) => !!value || "Field is required";
 const store = useCreateMeetupStore();
@@ -16,10 +17,6 @@ const onCreateMeetup = () => {
     date: store.date,
     time: store.time,
   });
-};
-
-const handleTimeChange = (e) => {
-  store.time = e.time;
 };
 </script>
 
@@ -95,8 +92,8 @@ const handleTimeChange = (e) => {
         </v-col>
       </v-row>
       <v-row justify="center">
-        <v-col cols="12" md="6">
-          <TimePicker @change="handleTimeChange" />
+        <v-col cols="12" md="6" class="time">
+          <VueDatePicker v-model="store.time" time-picker />
         </v-col>
       </v-row>
       <v-row justify="center">
@@ -114,20 +111,5 @@ const handleTimeChange = (e) => {
 .ttl {
   font-size: 2.8rem;
   font-weight: normal;
-}
-
-.time {
-  background-color: #f6f6f6;
-  min-height: 58px;
-  position: relative;
-  padding: 26px 16px 6px;
-}
-
-.time label {
-  position: absolute;
-  top: 7px;
-  --v-field-label-scale: 0.75rem;
-  font-size: var(--v-field-label-scale);
-  opacity: var(--v-medium-emphasis-opacity);
 }
 </style>

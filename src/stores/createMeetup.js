@@ -7,7 +7,10 @@ export const useCreateMeetupStore = defineStore("createMeetup", () => {
   const imageUrl = ref();
   const description = ref();
   const date = ref();
-  const time = ref();
+  const time = ref({
+    hours: new Date().getHours(),
+    minutes: new Date().getMinutes(),
+  });
   const formIsValid = computed(
     () =>
       title.value &&

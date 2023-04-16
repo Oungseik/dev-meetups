@@ -17,12 +17,11 @@ const dateOptions = { year: "numeric", month: "long", day: "numeric" };
           <v-img :src="meetup.imageUrl" aspect-ratio="2.5" cover></v-img>
           <v-card-text class="mt-4">
             <h3 class="text-info mb-2">
-              {{ new Date(meetup.date).toLocaleString("en-US", dateOptions) }}- Where it take place
+              {{ new Date(meetup.date).toLocaleString("en-US", dateOptions) }} -
+              {{ meetup.location }}
             </h3>
             <div>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam minus fugiat quos
-              quam quia ipsa nobis aliquam suscipit quasi aspernatur nam vel dolorem distinctio, et
-              voluptate facere optio. Est, alias!
+              {{ meetup.description }}
             </div>
           </v-card-text>
           <v-card-actions>
