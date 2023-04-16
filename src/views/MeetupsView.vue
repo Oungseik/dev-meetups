@@ -1,9 +1,9 @@
 <script setup>
 import { useMeetupStore } from "../stores/meetup";
+import { formatDate } from "../lib/date";
 
 const store = useMeetupStore();
 const meetups = store.getLoadedMeetups;
-const dateOptions = { year: "numeric", month: "long", day: "numeric" };
 </script>
 
 <template>
@@ -19,7 +19,7 @@ const dateOptions = { year: "numeric", month: "long", day: "numeric" };
               <v-col>
                 <v-card-title>
                   <h2>{{ meetup.title }}</h2>
-                  <div>{{ new Date(meetup.date).toLocaleDateString("en-US", dateOptions) }}</div>
+                  <div>{{ formatDate(meetup.date) }}</div>
                 </v-card-title>
                 <v-card-actions>
                   <v-btn class="bg-white" :to="`/meetups/${meetup.id}`">
