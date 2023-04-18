@@ -3,7 +3,6 @@ import { useCreateMeetupStore } from "../stores/createMeetup";
 import { useMeetupStore } from "../stores/meetup";
 import VueDatePicker from "@vuepic/vue-datepicker";
 import "@vuepic/vue-datepicker/dist/main.css";
-import { formatDate } from "../lib/date";
 
 const required = (value) => !!value || "Field is required";
 const store = useCreateMeetupStore();

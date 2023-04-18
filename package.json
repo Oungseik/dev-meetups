@@ -12,6 +12,7 @@
   "dependencies": {
     "@mdi/font": "^7.2.96",
     "@vuepic/vue-datepicker": "^4.4.0",
+    "firebase": "^9.19.1",
     "iconify-icon": "^1.0.7",
     "pinia": "^2.0.34",
     "vue": "^3.2.47",
