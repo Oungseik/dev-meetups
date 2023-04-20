@@ -1,4 +1,5 @@
 <script setup>
+// @ts-check
 import HeaderLayout from "./components/layouts/HeaderLayout.vue";
 </script>
 

@@ -1,4 +1,6 @@
+// @ts-check
 import { initializeApp } from "firebase/app";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD_nXNRJqpxPPG_CsvVK9i0B_RAt5qwxik",
@@ -10,3 +12,7 @@ const firebaseConfig = {
 };
 
 initializeApp(firebaseConfig);
+
+function signUserUp({ email, password }) {
+  // createUserWithEmailAndPassword(email, password).then((user) => {});
+}

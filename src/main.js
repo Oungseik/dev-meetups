@@ -8,7 +8,6 @@ import router from "./router";
 import "./firerbase";
 
 import "./assets/main.css";
-// import "iconify-icon";
 
 // Vuetify
 import "vuetify/styles";

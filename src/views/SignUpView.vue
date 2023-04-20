@@ -1,14 +1,21 @@
 <script setup>
+// @ts-check
 import { ref, computed } from "vue";
 
-const email = ref();
-const password = ref();
-const confirmPassword = ref();
+const email = ref("");
+const password = ref("");
+const confirmPassword = ref("");
 const comparePasswords = computed(() =>
   password.value !== confirmPassword.value ? "Password do not match" : ""
 );
 
-const required = (value) => !!value || "Field is required";
+/**     
+  @param {string} value
+  @return {string | boolean}
+ */
+function required(value) {
+  return !!value || "Field is required";
+}
 
 const onSignup = () => {
   console.log({

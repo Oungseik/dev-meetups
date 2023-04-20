@@ -6,7 +6,6 @@ import { formatDate } from "../lib/date";
 const store = useMeetupStore();
 const id = useRoute().params.id;
 const meetup = store.getLoadedMeetup(id);
-const dateOptions = { year: "numeric", month: "long", day: "numeric" };
 </script>
 
 <template>

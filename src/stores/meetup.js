@@ -32,11 +32,6 @@ export const useMeetupStore = defineStore("meetup", () => {
     },
   ]);
 
-  const user = ref({
-    id: "a977244a-e882-4a86-ab0f-3d048b97f35e",
-    registeredMeetups: ["meetup-1"],
-  });
-
   const getLoadedMeetups = computed(() =>
     loadedMeetups.value.sort((a, b) => (a.date < b.date ? 1 : -1))
   );
