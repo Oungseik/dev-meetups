@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "maxNodeModuleJsDepth": 1,
+    "allowJs": true
+  },
+
+  "input": ["src"]
+}
