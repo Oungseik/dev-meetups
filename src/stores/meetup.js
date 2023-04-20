@@ -1,3 +1,4 @@
+// @ ts-check
 import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 
@@ -37,10 +38,19 @@ export const useMeetupStore = defineStore("meetup", () => {
   );
   const featuredMeetups = computed(() => loadedMeetups.value.slice(0, 5));
 
-  const getLoadedMeetup = (id) => loadedMeetups.value.find((meetup) => meetup.id === id);
-  const addMeetup = (meetup) => {
-    loadedMeetups.value.push({ ...meetup, id: crypto.randomUUID() });
-  };
+  /**
+   * @param {string} id
+   * */
+  function getLoadedMeetup(id) {
+    return loadedMeetups.value.find((meetup) => meetup.id === id);
+  }
 
-  return { loadedMeetups, user, getLoadedMeetups, featuredMeetups, getLoadedMeetup, addMeetup };
+  /**
+   * @param {import("../types").Meetup} meetup
+   * */
+  function addMeetup(meetup) {
+    loadedMeetups.value.push({ ...meetup, id: crypto.randomUUID() });
+  }
+
+  return { loadedMeetups, getLoadedMeetups, featuredMeetups, getLoadedMeetup, addMeetup };
 });

@@ -4,7 +4,14 @@ import { useMeetupStore } from "../stores/meetup";
 import VueDatePicker from "@vuepic/vue-datepicker";
 import "@vuepic/vue-datepicker/dist/main.css";
 
-const required = (value) => !!value || "Field is required";
+/**
+* use to validate the `v-text-field` tag
+ * @param {string} value
+ * @return {string | boolean}
+ */
+function required(value) {
+  return !!value || "Field is required";
+}
 const store = useCreateMeetupStore();
 const meetupStore = useMeetupStore();
 
