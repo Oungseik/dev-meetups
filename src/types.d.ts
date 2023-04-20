@@ -1,6 +1,6 @@
 export interface Meetup  {
   imageUrl: string;
-  id: string;
+  id?: string;
   title: string;
   date: Date;
   location: string;

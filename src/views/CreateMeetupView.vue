@@ -5,7 +5,7 @@ import VueDatePicker from "@vuepic/vue-datepicker";
 import "@vuepic/vue-datepicker/dist/main.css";
 
 /**
-* use to validate the `v-text-field` tag
+* use to validate the `<v-text-field` tag
  * @param {string} value
  * @return {string | boolean}
  */
