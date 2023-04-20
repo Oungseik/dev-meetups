@@ -1,6 +1,8 @@
+// @ts-check
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 
+// @ts-ignore
 import App from "./App.vue";
 import router from "./router";
 import "./firerbase";
@@ -16,6 +18,7 @@ import * as directives from "vuetify/directives";
 import { aliases, mdi } from "vuetify/iconsets/mdi";
 import { fa } from "vuetify/iconsets/fa";
 
+// @ts-ignore
 import colors from "vuetify/lib/util/colors";
 
 import "@mdi/font/css/materialdesignicons.css";
